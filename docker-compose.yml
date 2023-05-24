@@ -1,0 +1,11 @@
+version: '3'
+services:
+  db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: insecure_password
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data/ #using a volume
+    ports:
+      - 5432:5432
+  
