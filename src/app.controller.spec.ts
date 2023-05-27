@@ -14,9 +14,27 @@ describe('AppController', () => {
     appController = app.get<AppController>(AppController);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+  describe('/page', () => {
+    it('should return {"foo":"bar"}', () => {
+      expect(appController.getPage()).toEqual({ foo: 'bar' });
+    });
+  });
+
+  describe('/secret', () => {
+    it('should return {"some":"secret"}', () => {
+      expect(appController.getSecret()).toEqual({ some: 'secret' });
+    });
+  });
+
+  describe('/page', () => {
+    it('should return {"foo":"bar"}', () => {
+      expect(appController.getPage()).toEqual({ foo: 'bar' });
+    });
+  });
+
+  describe('/secret', () => {
+    it('should return {"some":"secret"}', () => {
+      expect(appController.getSecret()).toEqual({ some: 'secret' });
     });
   });
 });
