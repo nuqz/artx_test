@@ -18,5 +18,11 @@ export class UsersService {
     return this.usersRepository.save(user);
   }
 
+  findOneByToken(access_token: string): Promise<User | null> {
+    return this.usersRepository.findOneBy({ access_token });
+  }
+
+  first(): Promise<User | null> {
+    return this.usersRepository.find({ take: 1 }).then((users) => users[0]);
   }
 }
