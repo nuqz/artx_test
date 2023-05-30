@@ -12,7 +12,7 @@ import { User } from './users/user.entity';
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
         host: configService.getOrThrow('POSTGRES_HOST'),
-        port: configService.getOrThrow<number>('POSTGRES_PORT'),
+        port: configService.getOrThrow('POSTGRES_PORT'),
         username: configService.getOrThrow('POSTGRES_USER'),
         password: configService.getOrThrow('POSTGRES_PASSWORD'),
         database: configService.getOrThrow('POSTGRES_DATABASE'),
