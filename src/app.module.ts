@@ -7,9 +7,15 @@ import { DatabaseModule } from './database.module';
 import { UsersModule } from './users/users.module';
 import { AuthMiddleware } from './middleware/auth.middleware';
 import { UsersService } from './users/users.service';
+import { RedisModule } from './redis/redis.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), DatabaseModule, UsersModule],
+  imports: [
+    ConfigModule.forRoot(),
+    DatabaseModule,
+    UsersModule,
+    RedisModule,
+  ],
   controllers: [AppController],
   providers: [UsersService],
 })
